@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">YourAppName</string>
+    <string name="teacher_name_label">Nom et Prenom</string>
+    <string name="subject_label">Module</string>
+    <string-array name="subjects_array">
+        <item>OCSF</item>
+        <item>Gestion de Portefeuil 2</item>
+        <item>JSMIF 2</item>
+        <item>Droit de la Finance</item>
+        <item>Econometrie Financier</item>
+        <item>Langue Francaise</item>
+        <item>Langue Anglaise</item>
+        <item>DCC</item>
+        <!-- Add more subjects as needed -->
+    </string-array>
+</resources>
