@@ -6,22 +6,35 @@
 
     <!-- "Scan" text in the center -->
     <TextView
+        android:id="@+id/scanTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Scan"
-        android:textSize="24sp"
-        android:textColor="#808080" />
+        android:textSize="@dimen/text_size_large"
+        android:textColor="@color/textSecondary" />
 
     <!-- Highlighted area to display scanned NFC UID -->
     <TextView
         android:id="@+id/scannedApogeeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textSize="20sp"
-        android:background="#FFFF00"
-        android:padding="8dp"
-        android:visibility="gone"
-        android:layout_below="@id/scanTextView" />
+        android:layout_below="@id/scanTextView"
+        android:layout_marginTop="@dimen/margin_large"
+        android:textSize="@dimen/text_size_medium"
+        android:background="@color/backgroundSecondary"
+        android:padding="@dimen/padding_standard"
+        android:visibility="gone" />
+
+    <!-- Button to generate PDF -->
+    <Button
+        android:id="@+id/generatePdfButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scannedApogeeTextView"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="Generate PDF"
+        android:textColor="@color/textPrimary"
+        android:background="@color/colorAccent" />
 
 </RelativeLayout>
+
