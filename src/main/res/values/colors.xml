@@ -1,0 +1,17 @@
+<!-- colors.xml -->
+<resources>
+    <!-- Primary colors -->
+    <color name="colorPrimary">#2c3e50</color>        <!-- Dark blue -->
+    <color name="colorPrimaryDark">#34495e</color>    <!-- Darker blue -->
+    <color name="colorAccent">#3498db</color>         <!-- Light blue -->
+
+    <!-- Text colors -->
+    <color name="textPrimary">#ffffff</color>          <!-- White -->
+    <color name="textSecondary">#000000</color>        <!-- Black -->
+    <color name="textAccent">#e74c3c</color>          <!-- Red -->
+
+    <!-- Background colors -->
+    <color name="backgroundPrimary">#ffffff</color>    <!-- White -->
+    <color name="backgroundSecondary">#f1c40f</color>  <!-- Yellow -->
+    <color name="backgroundAccent">#ecf0f1</color>     <!-- Light gray -->
+</resources>
