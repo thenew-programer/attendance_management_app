@@ -1,0 +1,26 @@
+<resources>
+    <!-- Text sizes -->
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
+
+    <!-- Margins and paddings -->
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+
+    <!-- Width and height -->
+    <dimen name="button_width">120dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+
+    <dimen name="logo_width">120dp</dimen>
+    <dimen name="logo_height">120dp</dimen>
+
+    <!-- Text view dimensions -->
+    <dimen name="text_view_height">wrap_content</dimen>
+    <dimen name="text_view_width">wrap_content</dimen>
+</resources>
