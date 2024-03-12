@@ -1,24 +1,35 @@
 package com.uca_lefa.attendance.ui;
 
+import android.Manifest;
+import android.view.View;
 import android.app.PendingIntent;
+import android.app.DownloadManager;
+import android.net.Uri;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Build;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.RequiresApi;
+import androidx.core.content.ContextCompat;
 
 import com.uca_lefa.attendance.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 
 public class ScanActivity extends AppCompatActivity {
 
+    private static final String TAG = "ScanActivity";
     private List<Student> students;
     private List<attendanceRecord> attendanceRecords;
 
@@ -43,11 +54,16 @@ public class ScanActivity extends AppCompatActivity {
             return;
         }
 
+		// Check if using NFC adapter is permitted
+
+
         // Initialize student list and attendance list
         initializeStudentList();
 
         // Initialize views
         scannedApogeeTextView = findViewById(R.id.scannedApogeeTextView);
+        Button generatePdfButton = findViewById(R.id.generatePdfButton);
+
 
         // Create a PendingIntent for NFC events
         pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
@@ -61,6 +77,15 @@ public class ScanActivity extends AppCompatActivity {
         }
         intentFiltersArray = new IntentFilter[]{ndefIntentFilter};
         techListArray = new String[][]{{android.nfc.tech.Ndef.class.getName()}};
+
+        // Set click listener for the Generate PDF button
+        generatePdfButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+				// Call PdfStorage class to generate and store file
+				PdfStorage.generatePdfToStore(this, attendanceRecords);
+            }
+
     }
 
     @Override
@@ -134,5 +159,12 @@ public class ScanActivity extends AppCompatActivity {
             sb.append(String.format("%02X", b));
         }
         return sb.toString();
+    }
+
+    // Method to generate PDF file
+    private PDDocument generatePdfFile() {
+        // Generate PDF
+        document = GeneratePdfUtils.generateAttendancePdf(this, attendanceRecords);
+        return document;
     }
 }
